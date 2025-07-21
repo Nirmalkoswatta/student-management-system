@@ -4,16 +4,17 @@
   align-items: center;
   height: 100vh;
   padding: 20px;
-  background: url('/loginregister.gif') no-repeat center center fixed;
+  background: url('/background2.png') no-repeat center center fixed;
   background-size: cover;
 }
 
 mat-card {
   width: 100%;
   max-width: 400px;
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.95);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   border-radius: 16px;
+  z-index: 2;
 }
 
 mat-form-field {

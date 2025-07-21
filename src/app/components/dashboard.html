@@ -1,0 +1,7 @@
+<div class="dashboard-container">
+  <h1 class="dashboard-title">
+    Welcome to your Dashboard!
+    <ng-container *ngIf="user$ | async as user"> <span>- {{ user.email }}</span></ng-container>
+  </h1>
+  <button mat-raised-button color="primary" [routerLink]="['/students']">Go to Students List</button>
+</div>

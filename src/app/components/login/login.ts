@@ -41,7 +41,7 @@ export class Login {
       this.authService.login(email, password)
         .then(() => {
           this.notificationService.show('Logged in successfully!');
-          this.router.navigate(['/']);
+          this.router.navigate(['/dashboard']);
         })
         .catch((error: any) => this.notificationService.show(error.message));
     }

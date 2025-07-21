@@ -20,4 +20,8 @@ export class AuthService {
   logout() {
     return signOut(this.auth);
   }
+
+  isLoggedIn(): boolean {
+    return !!this.auth.currentUser;
+  }
 } 
