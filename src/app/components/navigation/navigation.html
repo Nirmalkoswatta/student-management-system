@@ -1,0 +1,43 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/">Home</a>
+      <a mat-list-item routerLink="/students">Students</a>
+      <ng-container *ngIf="!(user$ | async)">
+        <a mat-list-item routerLink="/login">Login</a>
+        <a mat-list-item routerLink="/register">Register</a>
+      </ng-container>
+      <ng-container *ngIf="user$ | async">
+        <a mat-list-item (click)="logout()">Logout</a>
+      </ng-container>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>Student Management</span>
+      <span class="spacer"></span>
+      <ng-container *ngIf="user$ | async as user">
+        <span>{{ user.email }}</span>
+        <button mat-icon-button (click)="logout()">
+          <mat-icon>logout</mat-icon>
+        </button>
+      </ng-container>
+      <button mat-icon-button (click)="toggleTheme()">
+        <mat-icon>brightness_6</mat-icon>
+      </button>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
