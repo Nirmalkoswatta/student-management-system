@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
+import { Bubbles } from '../bubbles';
 
 @Component({
   selector: 'app-home',
-  imports: [],
+  imports: [Bubbles],
   templateUrl: './home.html',
-  styleUrl: './home.scss'
+  styleUrls: ['./home.scss']
 })
-export class Home {
-
-}
+export class Home {}

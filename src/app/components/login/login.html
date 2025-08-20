@@ -1,5 +1,7 @@
 <div class="login-container">
-  <mat-card>
+  <div class="waves"></div>
+  <app-bubbles></app-bubbles>
+  <mat-card class="glass-card slide-in-left">
     <mat-card-header>
       <mat-card-title>Login</mat-card-title>
     </mat-card-header>
@@ -13,8 +15,11 @@
           <mat-label>Password</mat-label>
           <input matInput formControlName="password" type="password" required>
         </mat-form-field>
-        <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.valid">Login</button>
+        <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.valid" class="button-hover pulse">Login</button>
       </form>
+      <div class="register-link">
+        Not registered? <a routerLink="/register">Click here</a>
+      </div>
     </mat-card-content>
   </mat-card>
 </div>

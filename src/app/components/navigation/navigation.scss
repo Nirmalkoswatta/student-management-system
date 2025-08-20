@@ -20,3 +20,49 @@
 .spacer {
   flex: 1 1 auto;
 }
+
+.logout-btn {
+  color: #e53935 !important;
+  border-color: #e53935 !important;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.logout-btn:hover {
+  background: #e53935 !important;
+  color: #fff !important;
+}
+
+.video-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1; /* push fully behind everything */
+  overflow: hidden;
+}
+.video-bg video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+/* Make all container backgrounds transparent so video shows */
+.sidenav-container,
+mat-sidenav-content,
+.mat-drawer-container,
+.mat-drawer-content,
+mat-sidenav {
+  background: transparent !important;
+}
+
+/* Keep toolbar above video */
+mat-toolbar {
+  position: relative;
+  z-index: 1;
+}
+
+/* Make cards semi-transparent over video */
+mat-card {
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(6px);
+}

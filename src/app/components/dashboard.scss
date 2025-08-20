@@ -26,3 +26,11 @@ button[mat-raised-button] {
 button[mat-raised-button]:hover {
   background: #059669;
 }
+
+.dashboard-footer {
+  margin-top: 2rem;
+  text-align: center;
+  color: #222;
+  font-size: 1rem;
+  opacity: 0.7;
+}

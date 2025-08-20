@@ -2,3 +2,126 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+// Glassmorphism Card
+.glass-card {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(8px) saturate(120%);
+  -webkit-backdrop-filter: blur(8px) saturate(120%);
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px rgba(2,6,23,0.45);
+  color: #fff;
+}
+
+// Floating Label
+.floating-label {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+.floating-label input {
+  width: 100%;
+  padding: 1rem 0.5rem 0.5rem;
+  border: 1px solid #ccc;
+  outline: none;
+  border-radius: 5px;
+}
+.floating-label input:focus + label,
+.floating-label input:not(:placeholder-shown) + label {
+  top: -0.8rem;
+  font-size: 0.75rem;
+  color: #007bff;
+}
+.floating-label label {
+  position: absolute;
+  left: 0.5rem;
+  top: 1rem;
+  transition: 0.2s ease all;
+  pointer-events: none;
+}
+
+// Pulse Animation
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+// Slide In Left Animation
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.slide-in-left {
+  animation: slideInLeft 0.6s ease-out;
+}
+
+// Fade + pop animation used for forms
+@keyframes popIn {
+  0% { transform: translateY(12px) scale(.98); opacity: 0; }
+  60% { transform: translateY(-6px) scale(1.01); opacity: 1; }
+  100% { transform: translateY(0) scale(1); }
+}
+.pop-in {
+  animation: popIn 520ms cubic-bezier(.2,.9,.3,1) both;
+}
+
+/* Ensure app routes and containers allow the fullscreen video to show */
+app-root, body, html, :root {
+  height: 100%;
+}
+
+/* Make base text colors readable over video */
+body, app-root {
+  color: #eef2f6;
+}
+
+/* Ensure no element draws a solid background over the full viewport so the video shows */
+body, app-root, main, router-outlet, #bg-video, :root {
+  background: transparent !important;
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .pulse, .slide-in-left, .pop-in, .pop-in * {
+    animation: none !important;
+  }
+}
+
+// Waves Background Animation
+.waves {
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  animation: waves 10s infinite linear;
+  background-size: 200% 100%;
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  z-index: 0;
+  opacity: 0.15;
+}
+@keyframes waves {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 200% 0%; }
+}
+
+// Colorful Gradient Hover Buttons
+.button-hover {
+  background: linear-gradient(45deg, #1de9b6, #1dc4e9);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+.button-hover:hover {
+  background: linear-gradient(45deg, #1dc4e9, #1de9b6);
+}

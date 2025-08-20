@@ -8,6 +8,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../services/auth.service';
 import { NotificationService } from '../../services/notification.service';
+import { RouterModule } from '@angular/router';
+import { Bubbles } from '../bubbles';
 
 @Component({
   selector: 'app-login',
@@ -20,7 +22,9 @@ import { NotificationService } from '../../services/notification.service';
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    RouterModule,
+    Bubbles
   ]
 })
 export class Login {

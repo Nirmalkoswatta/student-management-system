@@ -4,18 +4,33 @@
   align-items: center;
   height: 100vh;
   padding: 20px;
-  background: url('/background2.png') no-repeat center center fixed;
-  background-size: cover;
+  background: transparent;
 }
 
 mat-card {
   width: 100%;
-  max-width: 400px;
-  background: rgba(255, 255, 255, 0.85);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  max-width: 520px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.04));
+  box-shadow: 0 16px 40px rgba(2,6,23,0.55);
   border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 0.6rem;
 }
 
 mat-form-field {
   width: 100%;
+}
+
+button.button-hover {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  font-weight: 600;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.4);
+}
+
+/* Input background for readability */
+mat-form-field .mat-form-field-flex {
+  background: rgba(255,255,255,0.03);
+  border-radius: 8px;
+  padding: 0.15rem 0.4rem;
 }

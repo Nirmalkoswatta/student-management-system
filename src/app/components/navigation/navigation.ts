@@ -22,8 +22,8 @@ import { User } from '@angular/fire/auth';
     CommonModule,
     MatToolbarModule,
     MatButtonModule,
-    MatSidenavModule,
     MatIconModule,
+    MatSidenavModule,
     MatListModule,
     RouterModule
   ]

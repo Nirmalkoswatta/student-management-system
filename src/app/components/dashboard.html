@@ -1,7 +1,14 @@
 <div class="dashboard-container">
-  <h1 class="dashboard-title">
-    Welcome to your Dashboard!
-    <ng-container *ngIf="user$ | async as user"> <span>- {{ user.email }}</span></ng-container>
-  </h1>
-  <button mat-raised-button color="primary" [routerLink]="['/students']">Go to Students List</button>
+  <div class="waves"></div>
+  <app-bubbles></app-bubbles>
+  <div class="glass-card slide-in-left" style="text-align:center;">
+    <h1 class="dashboard-title">
+      Welcome to your Dashboard!
+      <ng-container *ngIf="name$ | async as name"> <span>- {{ name }}</span></ng-container>
+    </h1>
+    <button mat-raised-button color="primary" [routerLink]="['/students']" class="button-hover pulse">Go to Students List</button>
+  </div>
+  <footer class="dashboard-footer">
+    Created by Nirmal Koswatta undergraduate student @ SLIIT
+  </footer>
 </div>

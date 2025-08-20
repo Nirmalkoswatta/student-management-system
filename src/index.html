@@ -8,8 +8,37 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    /* Background video sits behind the app root */
+    #bg-video {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: -1000;
+      object-fit: cover;
+      top: 0;
+      left: 0;
+      filter: saturate(0.95) contrast(1) brightness(0.6);
+    }
+    .bg-overlay {
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.55));
+      z-index: -900;
+      pointer-events: none;
+    }
+  </style>
 </head>
 <body>
+  <video id="bg-video" autoplay muted loop playsinline>
+    <source src="/school.mp4" type="video/mp4">
+    <!-- fallback: static image -->
+  </video>
+  <div class="bg-overlay" aria-hidden="true"></div>
   <app-root></app-root>
 </body>
 </html>
